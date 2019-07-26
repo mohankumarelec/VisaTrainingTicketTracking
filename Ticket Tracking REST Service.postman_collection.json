@@ -1,0 +1,120 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Ticket Tracking REST Service",
+		"_postman_id": "2c8475d3-a175-0c6c-fd14-3c280312b3ac",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"url": "{{url}}/users",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"url": "{{url}}/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"Geetha\",\n\t\"email\":\"geetha@visa.com\",\n\t\"password\":\"geetha\",\n\t\"name\":\"Geethanjali\",\n\t\"role\":\"IT\"\n}\n"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tickets",
+			"description": "",
+			"item": [
+				{
+					"name": "getTickets",
+					"request": {
+						"url": "{{url}}/tickets",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "addTicket",
+					"request": {
+						"url": "{{url}}/tickets",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"ticketDescription\":\"laptop not working\",\n\t\"ticketRaisedBy\":{\n\t\t\"email\":\"geetha@visa.com\"\n\t}\n}\n\n\n\n\n\n"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "updateTicket",
+					"request": {
+						"url": "{{url}}/tickets",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n    {\n        \"ticketId\": 2,\n        \"ticketResolvedBy\": {\n        \t\"email\":\"geetha@visa.com\"\t\n        },\n        \"ticketResolvedInfo\": \"Resolved succesfully\",\n        \"ticketResolveDate\": \"2019-07-27 05:56:07\"\n    }\n"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
